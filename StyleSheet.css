@@ -1,0 +1,255 @@
+﻿html {
+    scroll-behavior: smooth;
+    /* свойство scroll-behavior не наследуется, применяется к прокручиваемым блокам */
+}
+
+#map {
+    height: 40vh;
+}
+
+.socialLink {
+    width: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-family: 'Merienda One', cursive;
+}
+
+
+/*h3{
+    margin-top: 3rem;
+}*/
+
+h5 {
+    text-align: center;
+}
+
+h3 {
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 0.8rem;
+}
+
+
+/************                    header                       ***********/
+
+
+/**************************       main       *****************************/
+
+.attachment {
+    background-image: url('img/Slider-1-opt.jpg');
+    background-attachment: fixed;
+    color: white;
+    /*height: 150vh;*/
+    background-size: cover;
+    background-position-x: right;
+}
+
+.attachment .col-12 {
+    background: rgb(65, 5, 87);
+    background: linear-gradient(0deg, rgba(65, 5, 87, 1) 0%, rgba(87, 6, 148, 0) 100%);
+}
+
+.attachment .card {
+    background: none;
+    border: none;
+    display: block;
+}
+
+.attachment .card .card-img-top {
+    width: auto;
+    height: 50px;
+}
+
+.attachment .logo {
+    height: 100vh;
+}
+
+.attachment .logo .col-6 {
+    display: flex;
+}
+
+.attachment a.btn {
+    margin: 6.5rem 0 7.5rem 0;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.attachment a.btn:hover {
+    background-color: #ffffff !important;
+    color: #2f0166 !important;
+}
+
+.section1,
+.section3,
+.section5,
+footer {
+    padding: 2rem 2rem 1rem;
+    /*margin-top: 20px;*/
+    /*padding: 3rem 0 3rem 0;*/
+    /*text-align: center;*/
+}
+
+.section2,
+.section4,
+.section6 {
+    background-color: #e8c6fb;
+    padding: 2rem 2rem 1rem;
+    /*margin-top: 20px;*/
+}
+
+.section7 {
+    padding: 2rem 0 1rem 0;
+}
+
+.section7 .col-12 {
+    padding: 0;
+}
+
+.section1 .cardproperty,
+.section2 .cardproperty,
+.section4 .cardproperty,
+.section5 .cardproperty {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-deck {
+    padding: 20px;
+    margin: 20px;
+}
+
+.section3 a.btn {
+    margin: 6.5rem 0 7.5rem 0;
+    color: #2f0166;
+    border: 3px solid #2f0166;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.section3 a.btn:hover {
+    background-color: #2f0166!important;
+    color: #ffffff !important;
+}
+
+.section3 {
+    background: rgb(167, 166, 162);
+    background: url('img/img1.jpg') no-repeat right, linear-gradient(0deg, rgba(167, 166, 162, 1) 0%, rgba(205, 204, 200, 1) 50%, rgba(212, 209, 204, 1) 100%);
+    background-size: contain;
+}
+
+.section4 li {
+    font-size: 0.8rem;
+}
+
+.section5 h6 {
+    text-align: center;
+}
+
+.section4 .card,
+.section2 .card {
+    height: 100%;
+    box-shadow: 5px 5px 15px -1px #9344C4;
+    border: 2px solid #2f0166;
+}
+
+.section5 .card,
+.section1 .card {
+    border: 2px solid #2f0166;
+    height: 100%;
+    box-shadow: 7px 5px 11px 1px #e8c6fb;
+}
+
+
+/************************************           footer          ******************************************/
+
+.footer {
+    background-color: #2f0166;
+    color: white;
+}
+
+.footer .btn {
+    color: white;
+}
+
+.footer .fixed {
+    position: fixed;
+    bottom: 24px;
+    right: 16px;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem;
+    background-color: rgba(0, 0, 0, .5);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.footer .fixed:hover {
+    background-color: #2f0166 !important;
+    color: #ffffff !important;
+}
+
+#footer .gm-style-iw-d {
+    color: #2f0166;
+    font-weight: 700;
+}
+/*******************************        sign up         *******************************/
+#signUp {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid #2f0166;
+    font-size: 0.8rem;
+}
+
+#signUp p{
+    color:red;
+}
+
+button[type="submit"] {
+    background-color: #2f0166;
+    border-color: #2f0166;
+}
+
+button[type="submit"]:hover {
+    background-color: #e8c6fb;
+    border-color: #e8c6fb;
+}
+
+#cancel {
+    background-color: rgba(0, 0, 0, .5);
+    border-color: rgba(0, 0, 0, .5);
+}
+
+#cancel:hover {
+    background-color: #e8c6fb;
+    border-color: #e8c6fb;
+}
+
+@media screen and (max-width: 576px) {
+    #signUp {
+        width: 90%;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
