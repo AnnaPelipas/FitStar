@@ -243,6 +243,7 @@ button[type="submit"]:hover {
 
 @media screen and (max-width: 576px) {
     #signUp {
+        top:10%;
         width: 90%;
         left: 5%;
     }
