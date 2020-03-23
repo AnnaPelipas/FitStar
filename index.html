@@ -408,18 +408,21 @@
         </footer>
         <form id="signUp" hidden>
             <div class="form-row">
-                <div class="form-group col-md-7 offset-md-1 col-cm-12">
+                <div class="form-group col-md-7 offset-md-1 col-sm-12">
                     <label for="inputName">Фамилия Имя</label>
-                    <input type="text" class="form-control" placeholder="Имя" id="inputName">
+                    <input type="text" class="form-control" placeholder="Имя" id="inputName" data-val="(^[A-Za-z]{1}[a-z]{1,14} [A-Za-z]{1}[a-z]{1,14}$)|(^[А-Яа-я]{1}[а-я]{1,14} [А-Яа-я]{1}[а-я]{1,14}$)">
                 </div>
                 <div class="form-group col-md-3 col-sm-12 ">
                     <label for="tel">Телефон</label>
-                    <input type="tel" class="form-control" id="tel" pattern="+38-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <input type="tel" class="form-control" id="tel" data-val="^[+]{1}[0-9]{2}[(]{1}[0-9]{3}[)]{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 text-center" hidden id="danger">
-                    <p>Заполните поля "ИМЯ" и "телефон"</p>
+                <div class="col-md-7 offset-md-1 col-sm-12 text-left" hidden id="danger1">
+                    <p>Заполните поле "Фамилия Имя"</br> в формате "Фамилия Имя"</p>
+                </div>
+                <div class="col-md-4 col-sm-12 ml-auto text-left" hidden id="danger2">
+                    <p>Заполните полe "Телефон" в формате "+38(0ХХ)ХХХ-ХХ-ХХ"</p>
                 </div>
             </div>
             <div class="form-row">

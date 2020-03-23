@@ -134,23 +134,85 @@ function hideForm(e) {
 /***    Use this token to access the HTTP API:
         981033277:AAHH-NZrdSz6qiE8R5ai2c_vHjjWJPxxWn8
         "id":-1001384617917     *********/
-
 let inputName = document.getElementById("inputName");
 let tel = document.getElementById("tel");
 let submit = document.getElementById("submit");
-let dangerMessage = document.getElementById("danger");
+let dangerMessage1 = document.getElementById("danger1");
+let dangerMessage2 = document.getElementById("danger2");
+let invalid = 0;
+let arrInput = signUp.getElementsByTagName("input");
+
 submit.addEventListener("click", sendMessage);
+tel.addEventListener("input", mask, false);
+tel.addEventListener("focus", mask, false);
+tel.addEventListener("blur", mask, false);
+
+for (el of arrInput){
+    el.addEventListener("input", validateInput);
+}
+function validateInput(e) {
+    let el = e.target;
+    let pattern = el.dataset.val;
+    let value = el.value;
+    let res = value.search(pattern);
+    if (res == -1) {
+        el.classList.add("error");
+    } else {
+        el.classList.remove("error");
+    }
+}
+
+
+
+function setCursorPosition(pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+    else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select()
+    }
+}
+
+function mask(event) {
+    var matrix = "+38(0__)___-__-__",
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, "");
+    if (def.length >= val.length) val = def;
+    this.value = matrix.replace(/./g, function (a) {
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+    });
+    if (event.type == "blur") {
+        if (this.value.length == 2) this.value = ""
+    } else setCursorPosition(this.value.length, this)
+};
+
 
 //Отправляем текст в телеграм канал
-
 function sendMessage(e, token, text, chatid) {
     e.preventDefault();
     var chatid = "-1001384617917";
     var token = "981033277:AAHH-NZrdSz6qiE8R5ai2c_vHjjWJPxxWn8";
     var text = `<b>FITSTAR</b> \n${inputName.value}  ${tel.value} \n${inputTraining.value}  ${inputTime.value}`;
-    if (inputName.value == "" || tel.value == "") {
-        dangerMessage.hidden = false;
+    if (inputName.classList.contains("error") || inputName.value=="") {
+        dangerMessage1.hidden = false;
+        invalid=0;
     } else {
+        dangerMessage1.hidden = true;
+        invalid++;
+    }
+    if (tel.classList.contains("error") || tel.value=="") {
+        dangerMessage2.hidden = false;
+        invalid=0;
+    } else {
+        dangerMessage2.hidden = true;
+        invalid++;
+    }
+    if (invalid > 1) {
+        console.log(invalid);
         var z = $.ajax({
                 type: "POST",
                 url: "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatid,
@@ -159,15 +221,12 @@ function sendMessage(e, token, text, chatid) {
         signUp.hidden = true;
         inputName.value = "";
         tel.value = "";
+        inputName.classList.remove("error");
+        tel.classList.remove("error");
     }
 };
 
-
-
-
-
 /*****         map         ******/
-
 var map;
 function initMap() {
     var uluru = { lat: 47.105235, lng: 37.665586 };
